@@ -14,6 +14,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
 	## set(matrix)
 	## setter function for the input matrix
+	
 	set<-function(input){
 		x <<-input
 		inverse <<- NULL
@@ -38,7 +39,7 @@ makeCacheMatrix <- function(x = matrix()) {
 		inverse
 	}
 
-	## return a list of getter and setter methods as a result of object creation
+	## return a list of getter and setter functions
 	list(set = set, get = get,
 		setinverse = setinverse,
 		getinverse = getinverse)
@@ -51,7 +52,6 @@ makeCacheMatrix <- function(x = matrix()) {
 ## If an inverse of an input matrix does not exist in its cache, it performs an inverse, caches and returns the result
 
 cacheSolve <- function(x, ...) {
-
 	## First retrieve the inverse from cache
 	inversematrix <- x$getinverse()
 
